@@ -139,6 +139,9 @@ app.delete("/contacto/:id", async (request, response) => {
 
 app.use(myErrorHandler);
 
-app.listen(3000, function () {
+//settings
+app.set('port',process.env.PORT || 3000)
+
+app.listen(app.get('port'), function () {
     console.log('Iniciando la aplicación en http://localhost:3000 <- copia esta URL en tu navegador');
 });
